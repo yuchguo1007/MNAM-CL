@@ -1,0 +1,56 @@
+{
+  "features": {
+    "user_sparse_features": [
+      "user_id",
+      "gender",
+      "age",
+      "occupation"
+    ],
+    "user_dense_features": [
+      "user_mean_rating"
+    ],
+    "item_sparse_features": [
+      "movie_id"
+    ],
+    "item_dense_features": [
+      "title_length",
+      "item_mean_rating"
+    ],
+    "protected_field": [
+      "item_mean_rating"
+    ],
+    "target": [
+      "rating_binary"
+    ],
+    "nunique_mode": "save",
+    "nunique_path": "cache/movielens_sparse_nunique.pkl"
+  },
+  "model": {
+    "dnn_hidden_units": [
+      32,
+      16
+    ],
+    "fair_expert_hidden_units": [
+      16,
+      8,
+      1
+    ],
+    "cl_temperature": 0.1,
+    "batch_size": 256,
+    "epochs": 2,
+    "save_model": true,
+    "model_path": "cache/fair_movielens_state_dict.pth",
+    "save_test": true,
+    "test_path": "dataset/movielens/test.csv",
+    "eval_ndcg_target": [
+      "rating_binary",
+      "rating"
+    ]
+  },
+  "data":
+  {
+    "dataset_name": "movielens",
+    "raw_data_path": "./dataset/movielens/movielens.txt",
+    "test_data_path": "./dataset/movielens/testset.csv"
+  }
+}

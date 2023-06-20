@@ -1,0 +1,7 @@
+dataset/*
+*.pyc
+notebook/*
+.idea/*
+cache/*
+venv
+.DS_Store
